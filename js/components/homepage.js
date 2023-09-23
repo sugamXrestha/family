@@ -15,8 +15,7 @@ let outPut = `<section class="background">
         'contact' : 'Call or text +977 9823454159',
         },
     ]
-    outPut += `<h1>WELCOME TO FAMILY DENTAL CARE</h1>
-        <h3>Best Dental Care <br> In Your City</h3>`
+    outPut += `<h3>Welcome to Best Dental <br> Care In Your City</h3>`
         homeDatas.map(homeData =>{
             outPut += `<p class="slogan">${homeData.slogan}</p>
             <a href="#" class="btn btn-transparent">Appointment</a>
