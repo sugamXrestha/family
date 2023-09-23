@@ -714,7 +714,7 @@ footer {
   margin: 5px 0;
 }
 p.slogan{
-  font-family: 'Norican', cursive;
+  /* font-family: 'Norican'; */
   text-transform: uppercase;
   color: #ffff00;
 }
