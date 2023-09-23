@@ -4,6 +4,7 @@ import comments from "./comments.js";
 function homepage(){
     // background
 let outPut = `<section class="background">
+<img src="../images/brushing.webp">
 </section>`
 
     outPut += `<section class="homepage-background">
