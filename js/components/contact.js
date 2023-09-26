@@ -39,7 +39,7 @@ function contact(){
         let outPut = `<section class="map-contact-background">
         <div class="container">
             <div class="map-contact">
-                <div class="map">
+                <div class="map" id="map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3530.7298675406546!2d85.34905119999999!3d27.756476799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1fad607d6037%3A0xbc69ee8447c21ccd!2sFamily%20Dental%20Care%20%26%20RCT%20Centre!5e0!3m2!1sen!2snp!4v1675361323837!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>`
 
@@ -83,24 +83,24 @@ function contact(){
                     <div class="quaries-title">
                         <h1>Any Messages or Question</h1>
                     </div>
-                    <form action="" methon="POST">
+                    <form action="" method="POST" id="quaries">
                         <div class="form-control">
-                            <p>Name<span id="quarynameError"></span></p>
+                            <p>Name<span id="quarynameError" class='error'></span></p>
                             <input type="text" id="quariesName" placeholder="Enter Your Name">
                             
                         </div>
                         <div class="form-control">
-                            <p>Email<span id="quaryemailError"></span></p>
+                            <p>Email<span id="quaryemailError" class='error'></span></p>
                             <input type="email" id="quariesEmail" placeholder="Enter Your email">
                             
                         </div>
                         <div class="form-control">
-                            <p>Phone number<span id="quaryphoneError"></span></p>
-                            <input type="number" id="quariesPhone" placeholder="Enter Your Phone number">
+                            <p>Phone number<span id="quaryphoneError" class='error'></span></p>
+                            <input type="text" id="quariesPhone" placeholder="Enter Your Phone number">
                             
                         </div>
                         <div class="form-control">
-                            <p>Messages<span id="quarymessageError"></span></p>
+                            <p>Messages<span id="quarymessageError" class='error'></span></p>
                             <textarea name="Messages" id="quariesMessage" placeholder="Your Messages" cols="30" rows="5"></textarea>
                             
                         </div>
@@ -134,7 +134,7 @@ function contact(){
                 nameError.innerHTML= "*Name is required";
             }else if(!name.match(/^[a-zA-Z]/)){
                 nameError.innerHTML= "*Only use alphabet"
-            }else if(name < 3){
+            }else if(name.length < 3){
                 nameError.innerHTML="*Name must be longer than 3"
             }else{
                 nameError.innerHTML = ''
@@ -161,9 +161,15 @@ function contact(){
             if(message == ''){
                 messageError.innerHTML= "*Message is required";
             }else{
-                messageErrorError.innerHTML = "";
+                messageError.innerHTML = "";
             }
-            
+            const errorElements = document.querySelectorAll('.error');
+        const hasErrors = Array.from(errorElements).some(element => element.textContent.trim() !== '');
+
+        if (!hasErrors) {
+            document.getElementById('quaries').reset();
+            alert("Your quaries send successfully!!")
+        }
         
         })
     })

@@ -19,7 +19,7 @@ let outPut = `<section class="background">
     outPut += `<h3>Welcome to Best Dental <br> Care In Your City</h3>`
         homeDatas.map(homeData =>{
             outPut += `<p class="slogan">${homeData.slogan}</p>
-            <a href="#" class="btn btn-transparent">Appointment</a>
+            <a href="#appointment-table" class="btn btn-transparent">Appointment</a>
             <a href="#" class="btn">${homeData.contact}</a>`
         })
         outPut += `</div>
@@ -35,9 +35,9 @@ let outPut = `<section class="background">
             <div class="table">`
         let cards = [
             {title: 'Opening Hour', image: '../images/clock.png', description: 'Sunday - Friday <br> 12:00 pm - 8:00 pm', moreBtn: '', link: '#'},
-            {title: 'Appointment', image: '../images/appointment.png', description: 'At Family Dental Care, we\'re here when you need us most. That\'s why we\'re bringing you more ways to get the care you need than ever before.', moreBtn: 'Requests', link: '#'},
+            {title: 'Appointment', image: '../images/appointment.png', description: 'At Family Dental Care, we\'re here when you need us most. That\'s why we\'re bringing you more ways to get the care you need than ever before.', moreBtn: 'Requests', link: '#appointment-table'},
             {title: 'Urgent <br> Care', image: '../images/dentist.png', description: 'Search for a care facility near you to find the shortest wait and get in line ahead of time.', moreBtn: 'Search', link: '#'},
-            {title: 'Find<br> Location', image: '../images/location.png', description: 'We’re located in the heart of the beautiful Hattigauda area.', moreBtn: 'Visits', link: '#'},
+            {title: 'Find<br> Location', image: '../images/location.png', description: 'We’re located in the heart of the beautiful Hattigauda area.', moreBtn: 'Visits', link: './contact.html#map'},
         ]
         cards.map(card =>{
             outPut += `<div class="card">
@@ -214,9 +214,9 @@ let outPut = `<section class="background">
                     <div class="dentists-content">`
 
         let dentists = [
-            {image: '../images/our-dentist.jpg', name: 'Gopal Bahadur', field: 'Orthopedics Expert', description: 'Hello guys, I am Gopal from Sirbistana. I am senior art director and founder of Violetta.'},
-            {image: '../images/our-dentist.jpg', name: 'Gopal Bahadur', field: 'Orthopedics Expert', description: 'Hello guys, I am Gopal from Sirbistana. I am senior art director and founder of Violetta.'},
-            {image: '../images/our-dentist.jpg', name: 'Gopal Bahadur', field: 'Orthopedics Expert', description: 'Hello guys, I am Gopal from Sirbistana. I am senior art director and founder of Violetta.'},
+            {image: '../images/our-dentist1.jpg', name: 'Gopal Bahadur', field: 'Orthopedics Expert', description: 'Hello guys, I am Gopal from Sirbistana. I am senior art director and founder of Violetta.'},
+            {image: '../images/our-dentist2.jpg', name: 'Smriti Ghale', field: 'Orthopedics Expert', description: 'Hello guys, I am Gopal from Sirbistana. I am senior art director and founder of Violetta.'},
+            {image: '../images/our-dentist3.jpg', name: 'John Rana Magar', field: 'Orthopedics Expert', description: 'Hello guys, I am Gopal from Sirbistana. I am senior art director and founder of Violetta.'},
         ]
         dentists.map(dentist =>{
             outPut += `<div class="dentists-detail">

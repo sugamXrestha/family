@@ -20,7 +20,6 @@ function menu(page){
         outPut += `<nav>
         <ul>`
         navs.map((nav) =>{
-            console.log(page, nav.pagevalue)
             outPut += `<li><a href='${nav.link}' class="${classActive(page, nav.pagevalue)}">${nav.pagename}</a></li>`
         
             })
@@ -29,7 +28,6 @@ function menu(page){
             outPut += `</div>
             </div>
             </div>`;
-            console.log(page);
             
             
             return outPut;

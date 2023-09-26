@@ -1,31 +1,31 @@
 function appointment(){
-    let outPut = `<form action="" method="POST" class="appointment-table" id="appointment-table">
+    let outPut = `<form reset(); method="POST" class="appointment-table" id="appointment-table">
     <h3>Book An Appointment</h3>
     <div class="appointment-item">
         <input type="text" id="appService" placeholder="Choose Services"><br>
-        <span id="serviceError"></span>
+        <span id="serviceError" class='error'></span>
         </div>
     <div class="appointment-item">
         <input type="text" placeholder="Your name" id="appName">
-        <span id="nameError"></span>
+        <span id="nameError" class='error'></span>
     </div>
     <div class="appointment-item">
         <input type="email" placeholder="Your email" id="appEmail">
-        <span id="emailError"></span>
+        <span id="emailError" class='error'></span>
     </div>
     <div class="appointment-item">
         <input type="text" placeholder="Your number" id="appPhone">
-        <span id="phoneError"></span>
+        <span id="phoneError" class='error'></span>
     </div>
     
     <div class="appointment-item choose-date-time">
         <div>
             <input type="date" id="appDate">
-            <span id="dateError"></span>
+            <span id="dateError" class='error'></span>
        </div> 
        <div>
             <input type="time" id="appTime">
-            <span id="timeError"></span>
+            <span id="timeError" class='error'></span>
        </div>
     </div>
     <div class="submit-cancel">
@@ -41,13 +41,13 @@ return outPut;
 document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('submitAppointment').addEventListener('click', function(event){
         event.preventDefault();
+
         let service = document.getElementById('appService').value;
         let name = document.getElementById('appName').value;
         let email = document.getElementById('appEmail').value;
         let phone = document.getElementById('appPhone').value;
         let date = document.getElementById('appDate').value;
         let time = document.getElementById('appTime').value;
-        console.log(date)
     
         let serviceError = document.getElementById('serviceError');
         let nameError = document.getElementById('nameError');
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function(){
             nameError.innerHTML= "Name is required";
         }else if(!name.match(/^[a-zA-Z]/)){
             nameError.innerHTML= "Only use alphabet"
-        }else if(name < 3){
+        }else if(name.length < 3){
             nameError.innerHTML="Name must be longer than 3"
         }else{
             nameError.innerHTML = ''
@@ -102,8 +102,16 @@ document.addEventListener('DOMContentLoaded', function(){
         }else{
             timeError.innerHTML = "";
         }
-    
+        const errorElements = document.querySelectorAll('.error');
+        const hasErrors = Array.from(errorElements).some(element => element.textContent.trim() !== '');
+
+        if (!hasErrors) {
+            document.getElementById('appointment-table').reset();
+            alert("Appointment book successfully!!")
+        }
     })
 })
+
+
 
 export default appointment;
