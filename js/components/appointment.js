@@ -30,9 +30,11 @@ function appointment(){
     </div>
     <div class="submit-cancel">
         <input type="submit" id="submitAppointment" value="Submit">
-        <input type="reset" value="Reset">
+        <input type="reset" value="Reset" id="resetBtn">
     </div>
 </form>`
+
+
 
 
 return outPut;
@@ -73,6 +75,8 @@ document.addEventListener('DOMContentLoaded', function(){
         }else{
             nameError.innerHTML = ''
         }
+        
+
 
         if(email == ''){
             emailError.innerHTML = 'Email is required';
@@ -108,6 +112,23 @@ document.addEventListener('DOMContentLoaded', function(){
         if (!hasErrors) {
             document.getElementById('appointment-table').reset();
             alert("Appointment book successfully!!")
+
+                // Email.send({
+                //     SecureToken : "09013450-a014-44cd-be40-b7cabc5033a9",
+                //     Host: "smtp.elasticemail.com",
+                //     Username: "shresthasugam2060@gmail.com",
+                //     Password: "Dreambig2023",
+                //     To : 'shresthasugam2060@gmail.com',
+                //     From : email,
+                //     Subject : "This is the subject",
+                //     Body : "And this is the body",
+                //     Secure: true,
+                //     Port: 465,  
+                // }).then(
+                //   message => alert(message)
+                // );
+
+            
         }
     })
 })
