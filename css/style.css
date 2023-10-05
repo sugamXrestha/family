@@ -1763,7 +1763,7 @@ main .recent-patient .patient-name{
       padding: 15px 0 15px;
       font-size: 13px;
   }
-  .our-team-content .our-team-images{
+  .our-team-content .our-team-images,  .our-office-content{
       width: 100%;
   }
   .our-team-content .our-team-description{
